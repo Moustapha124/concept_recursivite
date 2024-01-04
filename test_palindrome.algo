@@ -1,0 +1,28 @@
+ALGORITHM test_palindrome
+VAR
+    mot: STRING;
+    i, j: INTEGER;
+    estPal: BOOLEAN;
+BEGIN
+    estPal := true;
+    Write("Entrez un mot :");
+    Read(mot);
+
+    i := 0;
+    j := mot.length-1;
+
+    WHILE (i < j) DO
+        IF (mot[i] <> mot[j]) THEN
+            estPal := false;
+            BREAK;  // Sortie de la boucle si les caractères ne correspondent pas
+        END_IF
+        i := i + 1;
+        j := j - 1;
+    END_WHILE
+
+    IF (estPal) THEN
+        Write("Le mot est un palindrome.");
+    ELSE
+        Write("Le mot n'est pas un palindrome.");
+    END_IF
+END
